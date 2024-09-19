@@ -18,7 +18,7 @@ class NetworkNode(models.Model):
     title = models.CharField(max_length=100, unique=True, verbose_name='название')
     contact = models.ForeignKey(Contact, on_delete=models.CASCADE, verbose_name='контакт', **NULLABLE)
     products = models.ManyToManyField(Product, verbose_name='продукция', **NULLABLE)
-    supplier = models.ForeignKey('self', null=True, blank=True, on_delete=models.SET_NULL, related_name='поставщик',
+    supplier = models.ForeignKey('self', on_delete=models.SET_NULL, related_name='поставщик',
                                  verbose_name='поставщик', **NULLABLE)
     debt = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='задолженность', **NULLABLE)
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='дата добавления записи', **NULLABLE)
