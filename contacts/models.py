@@ -5,6 +5,7 @@ NULLABLE = {'blank': True, 'null': True}
 
 class Contact(models.Model):
     """Модель контакта."""
+
     email = models.EmailField(unique=True, verbose_name="email", help_text="email address")
     country = models.CharField(max_length=50, verbose_name='страна', **NULLABLE)
     city = models.CharField(max_length=50, verbose_name='город', **NULLABLE)
