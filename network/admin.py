@@ -1,5 +1,6 @@
 from django.contrib import admin
-from models import NetworkNode
+
+from network.models import NetworkNode
 
 
 class NetworkNodeAdmin(admin.ModelAdmin):
